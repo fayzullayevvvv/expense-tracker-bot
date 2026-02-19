@@ -17,7 +17,8 @@ def set_name(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Telefon raqamingizni yuboring...",
         reply_markup=ReplyKeyboardMarkup(
-            keyboard=[[KeyboardButton("Telefon Raqam", request_contact=True)]]
+            keyboard=[[KeyboardButton("Telefon Raqam", request_contact=True)]],
+            resize_keyboard=True,
         ),
     )
 
@@ -32,7 +33,8 @@ def set_phone(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Lokatsiya yuboring...",
         reply_markup=ReplyKeyboardMarkup(
-            keyboard=[[KeyboardButton("Lokatsiya Yuborish", request_location=True)]]
+            keyboard=[[KeyboardButton("Lokatsiya Yuborish", request_location=True)]],
+            resize_keyboard=True,
         ),
     )
 
@@ -54,8 +56,10 @@ def set_location(update: Update, context: CallbackContext):
                 [
                     KeyboardButton("Tasdiqlash"),
                     KeyboardButton("Qayta Boshlash"),
-                ]
-            ]
+                ],
+            ],
+            resize_keyboard=True,
+            one_time_keyboard=True,
         ),
     )
 
